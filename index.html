@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> .. ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Padauk', 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6d427f 0%, #f3cffe 50%, #fea6fd 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            animation: floatUp 8s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 40px 25px;
+            border-radius: 28px;
+            box-shadow: 0 20px 50px rgba(233, 30, 99, 0.25);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gif-wrapper {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            position: relative;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .gift-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        h2 {
+            color: #d81b60;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .floating-warning {
+            position: absolute;
+            color: #d81b60;
+            font-size: 15px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 14px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+            pointer-events: none;
+            z-index: 99;
+            animation: fadeInOut 2.5s forwards;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: scale(0.5); }
+            20% { opacity: 1; transform: scale(1); }
+            80% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            min-height: 80px;
+            margin-top: 10px;
+        }
+
+        button {
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: 'Padauk', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            outline: none;
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #113399, #6c38ef);
+            color: white;
+            font-size: 20px;
+            padding: 14px 28px;
+            box-shadow: 0 8px 20px rgba(56, 71, 239, 0.4);
+        }
+
+        .no-btn {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 18px;
+            padding: 14px 28px;
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.3);
+        }
+
+        .celebrate-title {
+            color: #d81b60;
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .celebrate-desc {
+            color: #ad1457;
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-heart" style="left: 10%; animation-duration: 7s;">❤️</div>
+<div class="floating-heart" style="left: 25%; animation-duration: 10s; animation-delay: 1s;">💖</div>
+<div class="floating-heart" style="left: 45%; animation-duration: 8s; animation-delay: 2s;">💕</div>
+<div class="floating-heart" style="left: 70%; animation-duration: 9s; animation-delay: 0.5s;">🌸</div>
+
+<div class="card" id="card">
+    <div class="gif-wrapper">
+        <img id="gift" class="gift-img" src="https://i.pinimg.com/736x/11/93/8a/11938a9a79f15b950cbecce2b96ec7c4.jpg">
+    </div>
+    <h2>ရည်းစားဟောင်းလေး<br>ကိုယ့်ဆီပြန်လာပေးပါလား</h2>
+    <div class="btn-group">
+        <button id="yesBtn" class="yes-btn" onclick="sayYes()">ပြန်လာမယ်</button>
+        <button id="noBtn" class="no-btn" onclick="sayNo()">ငြင်းတယ်</button>
+    </div>
+</div>
+
+<script>
+    const FORMSPREE_URL = "https://formspree.io/f/mwllkeln";
+
+    const gifs = [
+        "https://i.pinimg.com/736x/13/8a/fd/138afd8f9237325c32fd05cf5e774ed7.jpg",
+        "https://i.pinimg.com/736x/1c/67/15/1c67157dad746d311d1e70c21bdd5fbf.jpg",
+        "https://i.pinimg.com/736x/e4/1a/34/e41a34e4ffd564eaff0c8fca83cfdf3d.jpg",
+        "https://i.pinimg.com/736x/19/53/90/195390582fdccc2ea6e2a2aa97ee5052.jpg"
+    ];
+
+    const warnings = [
+        "တကယ်ပဲ ငြင်းမှာလား? 🥺",
+        "PLEASE!!... 💔",
+        "ပြန်လာပေးပါ... ❤️",
+        "မနှိပ်ပါနဲ့တော့...😭",
+        "Try Again!!"
+    ];
+
+    let yesScale = 1;
+    let noScale = 1;
+    let gifIndex = 0;
+    let noClickCount = 0;
+
+    let audioCtx = null;
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+    }
+
+    // "ငြင်းတယ်" ခလုတ်အတွက် အသံကျယ်ကျယ်နှင့် ထიမိန်းရှင်းသော Error/Buzz အသံအသစ်
+    function playNoSound() {
+        initAudio();
+        if(!audioCtx) return;
+
+        let osc = audioCtx.createOscillator();
+        let gain = audioCtx.createGain();
+
+        // Square wave ဖြင့် ပိုမိုကျယ်လောင်ပြီး ထიမိန်းရှင်းသော အသံကို ဖန်တီးသည်
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+        osc.frequency.setValueAtTime(100, audioCtx.currentTime + 0.1);
+
+        gain.gain.setValueAtTime(0.9, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.25);
+    }
+
+    function playYesSound() {
+        initAudio();
+        if(!audioCtx) return;
+
+        const notes = [440, 554.37, 659.25, 880];
+        notes.forEach((freq, index) => {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+
+            let startTime = audioCtx.currentTime + (index * 0.1);
+            gain.gain.setValueAtTime(0.6, startTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.3);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(startTime);
+            osc.stop(startTime + 0.3);
+        });
+    }
+
+    function sayNo() {
+        playNoSound(); 
+        noClickCount++;
+        gifIndex = (gifIndex + 1) % gifs.length;
+        
+        const giftImg = document.getElementById('gift');
+        giftImg.src = gifs[gifIndex];
+
+        const randomWarning = warnings[Math.floor(Math.random() * warnings.length)];
+        
+        createFloatingWarning(randomWarning);
+
+        yesScale += 0.35;
+        noScale -= 0.15;
+        if (noScale < 0.2) noScale = 0.2;
+
+        document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
+        document.getElementById('noBtn').style.transform = `scale(${noScale})`;
+    }
+
+    function createFloatingWarning(text) {
+        const warningEl = document.createElement('div');
+        warningEl.className = 'floating-warning';
+        warningEl.innerText = text;
+
+        const randomX = Math.random() * (window.innerWidth - 180);
+        const randomY = Math.random() * (window.innerHeight - 100);
+
+        warningEl.style.left = `${randomX}px`;
+        warningEl.style.top = `${randomY}px`;
+
+        document.body.appendChild(warningEl);
+
+        setTimeout(() => {
+            warningEl.remove();
+        }, 2500);
+    }
+
+    function sayYes() {
+        playYesSound(); 
+        document.getElementById('card').innerHTML = `
+            <div class="gif-wrapper">
+                <img class="gift-img" src="https://i.pinimg.com/736x/44/7b/7d/447b7d233ba5eb9f8ed6ce88437709e1.jpg">
+            </div>
+            <div class="celebrate-title">ဟိဟိ ကိုလည်းမင်းကိုချစ်နေသေးတယ် 🥰❤️</div>
+            <div class="celebrate-desc">အရင်ထပ်ပိုချစ်ပေးမှာပါ အခွင့်ရေးလေးထပ်ပေးပါဦး‌နော် ✨</div>
+        `;
+
+        if (FORMSPREE_URL) {
+            fetch(FORMSPREE_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: "သူ 'လက်ခံတဲ့' ခလုတ်ကို နှိပ်လိုက်ပါပြီ! ❤️🥰",
+                    no_clicked_times: `"ငြင်တဲ့ခလုပ်ကို" ကို ${noClickCount} ကြိမ် နှိပ်ခဲ့ပါသည်။`,
+                    date: new Date().toLocaleString()
+                })
+            }).catch(err => console.log('Mail sent error:', err));
+        }
+    }
+</script>
+
+</body>
+</html>
